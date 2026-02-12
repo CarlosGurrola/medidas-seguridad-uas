@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Medida de seguridad</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f1f1f1;
+}
+
+/* ---------- SPLASH ---------- */
+#splash {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: splashOut 1s ease forwards;
+  animation-delay: 3.6s;
+}
+
+#splash::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #130a6b 50%, #C49E0D 50%);
+}
+
+#splash img {
+  width: 150px;
+  z-index: 2;
+  animation: logoSlowPulse 3.2s cubic-bezier(.22,1,.36,1);
+}
+
+/* 🔥 LENTO, SUAVE, PROFESIONAL */
+@keyframes logoSlowPulse {
+  0%   { opacity: 0; transform: scale(0.6); }
+  30%  { opacity: 1; transform: scale(1.35); }
+  55%  { transform: scale(1.35); }
+  80%  { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+@keyframes splashOut {
+  to { opacity: 0; visibility: hidden; }
+}
+
+/* ---------- HEADER ---------- */
+.header {
+  background: #130a6b;
+  padding: 20px 16px 110px; /* espacio para la tarjeta */
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 900px;
+  padding-left: 690px;
+}
+
+.header-content img {
+  width: 56px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.header-text h1 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 400;
+  color: #cfd3ff;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+.header-text h2 {
+  margin: 4px 2 2;
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+   white-space: nowrap;
+
+}
+
+.header h1 {
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+
+.header h2{
+  margin: 0;
+  font-size: 22px;
+}
+
+/* ---------- CONTENT ---------- */
+#content {
+  opacity: 0;
+  animation: showContent 1s ease forwards;
+  animation-delay: 3.8s;
+}
+
+@keyframes showContent {
+  to { opacity: 1; }
+}
+
+/* ---------- CARD ---------- */
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 0 12px 40px;
+  margin-top: -80px;   /* 👈 ESTO es lo importante */
+  position: relative;
+  z-index: 2;
+}
+
+
+
+.card {
+  background: white;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 8px 22px rgba(0,0,0,.3);
+}
+
+
+/* ---------- PREVIEW ---------- */
+.preview img {
+  width: 100%;
+  display: block;
+}
+
+/* ---------- BOTÓN (IGUAL AL EJEMPLO) ---------- */
+.btn {
+  width: 100%;
+  background: #e7c52b;
+  color: #fff;
+  padding: 18px 0;
+  text-align: center;
+  font-weight: 600;
+  text-decoration: none;
+  display: block;
+}
+
+.btn:hover {
+  background: #d8b821;
+}
+.preview {
+  margin:0px; /* separación clara entre imagen y botón */
+}
+
+
+
+
+html, body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<!-- SPLASH -->
+
+<div id="splash">
+  <img src="uas.png" alt="Logo">
+</div>
+
+
+
+
+  <div class="header">
+    <div class="header-text">
+      <h1>Universidad Autónoma de Sinaloa</h1>
+      <h2>Medida de seguridad</h2>
+    </div>
+  </div>
+
+
+  <div class="container">
+
+    <div class="card">
+
+
+      <!-- IMAGEN PREVIA -->
+      <div class="preview">
+        <img src="PDFQR1.jpg" alt="Vista previa del PDF">
+      </div>
+    </div>
+ </div>
+        
+
+</body>
+</html>
+
